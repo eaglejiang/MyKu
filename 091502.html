@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.js"></script>
+	</head>
+
+	<body>
+		<div ng-app="myapp" ng-controller="ajaxCon">
+			{{hello}}
+		</div>
+		<script>
+			var myapp = angular.module("myapp", []);
+			myapp.controller("ajaxCon", function($scope, $http) {
+				$http.get("1.txt").success(function(responseText) {
+					$scope.hello = responseText;
+				})
+			})
+		</script>
+
+	</body>
+
+</html>

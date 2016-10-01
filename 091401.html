@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.js" ></script>
+	</head>
+	<body>
+		<div ng-app="" ng-init="books=[{language:'武动乾坤',price:20.5},
+		{language:'大主宰',price:30.5},
+		{language:'完美世界',price:43.5},
+		{language:'斗破苍穹',price:123.5},
+		]">
+		过滤：<input type="text"  ng-model="bookName"/>
+		<ul>
+			<li ng-repeat="book in books|filter:{language:bookName}|orderBy:'price'">
+				{{book.language|uppercase}}:{{book.price|currency}}
+			</li>
+		</ul>
+		<table border="1px">
+		<tr  ng-repeat="book1 in books|orderBy:'price'">
+			<td>
+				书名
+			{{book1.language|uppercase}}
+			</td>
+			<td>
+				价格
+				{{book1.price|currency}}
+			</td>
+		</tr>
+		</table>
+		
+		</div>
+	</body>
+</html>

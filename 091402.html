@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.js" ></script>
+	</head>
+	<body>
+		<table ng-app="myApp" ng-controller="myCtrl">
+			<tr ng-repeat="subject in student.subjects">
+				<td>{{subject.name}}</td>
+				<td>{{subject.marks}}</td>
+			</tr>
+		</table>
+		<script>
+			var myApp=angular.module('myApp',[]);
+				myApp.controller('myCtrl',function($scope){
+					$scope.student={
+						firstName:"Terry",
+						lastName:"Lee",
+						fees:500,
+						subjects:[
+						{name:'语言编程基础',marks:90},
+						{name:'c语言',marks:85},
+						{name:'HTML/CSS',marks:61},
+						{name:'Java',marks:85},
+						{name:'NodeJS',marks:65}
+						],
+						fullName:function(){
+							var studentObject;
+							studentObject=$scope.student;
+							return studentObject.firstName+"  "+studentObject.lastName;						
+						}
+					};
+				})
+			
+		</script>
+	</body>
+</html>
+<!--<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.js" ></script>
+	</head>
+	<body>
+		<table ng-app="myApp" ng-controller="myCtrl">
+			<tr ng-repeat="subject in student.subjects">
+				<td>{{subject.name}}</td>
+				<td>{{subject.marks}}</td>
+			</tr>
+		</table>
+		<script>
+		var myApp = angular.module('myApp', []);
+			myApp.controller('myCtrl', function($scope) {
+			 $scope.student = {
+	      firstName: "Terry",
+	      lastName: "Lee",
+      fees:500,
+      subjects:[
+	         {name:'编程语言基础',marks:90},
+	         {name:'C语言',marks:85},
+	         {name:'HTML/CSS',marks:61},
+			 {name:'Java',marks:85},
+		 {name:'NodeJS',marks:65}
+	      ],
+      fullName: function() {
+	         var studentObject;
+	         studentObject = $scope.student;
+         return studentObject.firstName + " " + studentObject.lastName;
+      }
+   };
+})
+		</script>
+	</body>
+</html>-->

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script></script>
+	</head>
+	<body>
+		<div ng-app="" ng-init="foods=[{'name':'rice','evaluate':'good'},{'name':'corn','evaluate':'bad'}]">
+			<ul>
+				<li ng-repeat="food in foods">
+					食物的名称：{{food.name}},食物的评价{{food.evaluate}}
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript" src="js/angular.js" ></script>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.js"></script>
+	</head>
+
+	<body>
+		<div ng-app="myapp" ng-controller="leftWords">
+			<h1>盗墓笔记</h1>
+			<p>
+				<textarea cols="20" rows="10" ng-model="wordsNumber"></textarea>
+				</p><p>
+				<button ng-click="save()">保存</button>
+				<button ng-click="clear()">清楚</button>
+				<p>Number of characters left:<span ng-bind="left()"></span></p>
+			</p>
+		</div>
+		<script>
+			var myapp = angular.module("myapp", []);
+			myapp.controller("leftWords", function($scope) {
+				$scope.wordsNumber = "";
+				$scope.left = function() {
+					return 100 - $scope.wordsNumber.length;
+				};
+				$scope.save = function() {
+					alert("Save");
+				};
+				$scope.clear = function() {
+					$scope.wordsNumber = "";
+				}
+			})
+		</script>
+	</body>
+
+</html>

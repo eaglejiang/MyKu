@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-app="myapp" ng-controller="mycontro">			
+			科目的名称：{{course.name}}<br />
+			选修科目的学生人数：{{course.number}}<br />
+			总的学费{{course.result()}}万；
+		</div>
+		<script type="text/javascript" src="js/angular.js" ></script>
+		<script>
+			var myapp=angular.module("myapp",[]);
+			myapp.controller("mycontro",function($scope){
+				$scope.course={
+					"name":"HTML5+CSS3.0",
+					"numeber":"30",
+					"result":function(){
+						return 30*0.8;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
